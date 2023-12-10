@@ -1,0 +1,33 @@
+{% extends 'app_hw/base.html' %}
+{% block title %}
+    Create Page
+{% endblock %}
+
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <p>Author</p>
+            <input type="text" name="author_post">
+        </div>
+
+        <div>
+            <p>Title</p>
+            <input type="text" name="title">
+        </div>
+
+        <div>
+            <p>Description</p>
+            <textarea name="description_post"></textarea>
+        </div>
+
+        <div>
+            <p>Quantity Likes</p>
+            <input type="number" name="quantity_likes">
+        </div>
+        <br>
+        <input type="submit" value="Create">
+    </form>
+    <br>
+    <p><a href="{% url 'main_page' %}">Back</a></p>
+{% endblock content %}

@@ -1,0 +1,13 @@
+{% extends 'app_hw/base.html' %}
+{% block title %}
+    Main Page
+{% endblock %}
+
+{% block content %}
+    <h1>Posts</h1>
+    <p><a href="{% url 'create_page' %}">Create post</a></p>
+    {% for posts in post_list %}
+        <p>{{ posts }}</p>
+        <p><a href="{% url 'detail_page' posts.pk %}">Details</a></p>
+    {% endfor %}
+{% endblock content %}
